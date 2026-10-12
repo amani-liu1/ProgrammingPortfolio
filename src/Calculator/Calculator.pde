@@ -178,16 +178,58 @@ void performCalc() {
   newEntry = true;
 }
 
-void keyPressed () {
+void keyPressed() {
   if (key == '1') {
-    println("YOU HIT 1 " + keyCode);
+    println("You hit 1" + keyCode);
     handleEvent('1', true);
+  } else if (key == '2') {
+    println("You hit 2" + keyCode);
+    handleEvent('2', true);
+  } else if (key == '3') {
+    println("You hit 3" + keyCode);
+    handleEvent('3', true);
+  } else if (key == '4') {
+    println("You hit 4" + keyCode);
+    handleEvent('4', true);
+  } else if (key == '5') {
+    println("You hit 5" + keyCode);
+    handleEvent('5', true);
+  } else if (key == '6') {
+    println("You hit 6" + keyCode);
+    handleEvent('6', true);
+  } else if (key == '7') {
+    println("You hit 7" + keyCode);
+    handleEvent('7', true);
+  } else if (key == '8') {
+    println("You hit 8" + keyCode);
+    handleEvent('8', true);
+  } else if (key == '9') {
+    println("You hit 9" + keyCode);
+    handleEvent('9', true);
+  } else if (key == '0') {
+    println("You hit 0" + keyCode);
+    handleEvent('0', true);
   }
 }
 
 void handleEvent(char val, boolean isNum) {
-  if (isNum == true) {
-    //stuff
+  if (isNum) {
+    String digit = str(val);
+
+    if (newEntry || displayVal.equals("0.0")) {
+      // Replace value if 0.0
+      displayVal = digit;
+      newEntry = false;
+    } else {
+      displayVal += digit;
+    }
+
+
+    if (left) {
+      l = float(displayVal);
+    } else {
+      r = float(displayVal);
+    }
   } else {
     //other stuff
   }
