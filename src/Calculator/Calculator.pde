@@ -217,7 +217,7 @@ void handleEvent(char val, boolean isNum) {
     String digit = str(val);
 
     if (newEntry || displayVal.equals("0.0")) {
-      // Replace value if 0.0
+      // replace value with 0.0
       displayVal = digit;
       newEntry = false;
     } else {
